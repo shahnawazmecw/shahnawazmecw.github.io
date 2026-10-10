@@ -575,3 +575,60 @@ a.contact-item:hover { border-color: #b8daf0; background: rgba(184, 218, 240, .0
 
 /* Logo */
 .brand-logo { width: 38px; height: 38px; display: block; }
+
+/* ---------- Memories gallery ---------- */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.gallery button {
+  display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0; text-align: left; cursor: zoom-in;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.gallery button:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow); }
+.gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--bg-alt); transition: transform .4s; }
+.gallery button:hover img { transform: scale(1.03); }
+.g-cap { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; background: var(--surface); }
+.g-cap strong { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+.g-cap span { font-size: 13.500px; line-height: 1.5; color: var(--ink-2); }
+
+.lightbox {
+  width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 24px 72px;
+  border: 0; background: rgba(8, 8, 22, .94); color: #f1f1f6;
+}
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox::backdrop { background: rgba(8, 8, 22, .94); }
+.lightbox figure { display: flex; flex-direction: column; align-items: center; gap: 14px; max-width: 100%; max-height: 100%; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 150px); border-radius: 10px; object-fit: contain; }
+.lightbox figcaption { max-width: 72ch; text-align: center; font-size: 14.500px; line-height: 1.5; color: #c3c3d2; }
+.lightbox figcaption strong { color: #fff; }
+.lb-btn {
+  position: absolute; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .25); background: rgba(255, 255, 255, .08); color: #fff; cursor: pointer;
+}
+.lb-btn:hover { background: rgba(255, 255, 255, .2); }
+.lb-btn[hidden] { display: none; }
+.lb-btn svg { width: 22px; height: 22px; }
+.lb-close { top: 18px; right: 18px; }
+.lb-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 14px; top: 50%; transform: translateY(-50%); }
+
+/* twelve nav links need a little more room */
+.nav-links a { padding: 7px 8px; font-size: 13px; }
+@media (max-width: 1180px) {
+  .menu-btn { display: grid; }
+  .nav-tools { margin-left: auto; }
+  .nav-links {
+    position: absolute; left: 0; right: 0; top: 64px;
+    display: none; flex-direction: column; gap: 0; margin: 0;
+    padding: 8px 20px 16px;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    max-height: calc(100vh - 64px); overflow-y: auto;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 10px; font-size: 15px; }
+}
+@media (max-width: 700px) {
+  .lightbox { padding: 64px 12px 20px; }
+  .lb-prev, .lb-next { top: auto; bottom: 16px; transform: none; }
+  .lightbox img { max-height: calc(100vh - 230px); }
+  .lightbox figcaption { padding-bottom: 56px; }
+}

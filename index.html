@@ -73,6 +73,7 @@
         <a href="#skills">Skills</a>
         <a href="#training">Training</a>
         <a href="#reviewer">Reviewer</a>
+        <a href="#memories">Memories</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="nav-tools">
@@ -107,6 +108,10 @@
               Download CV
             </a>
             <a class="btn btn-line" href="#research">View publications</a>
+            <a class="btn btn-line" href="#memories">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.500" y="5" width="17" height="14" rx="2.500"/><circle cx="9" cy="10.500" r="1.600"/><path d="m5 17 4.500-4 3.500 3 2.500-2 3.500 3"/></svg>
+              Memories
+            </a>
           </div>
           <ul class="hero-links" aria-label="Profiles">
             <li><a href="https://scholar.google.com/citations?user=s_EjKoIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
@@ -504,8 +509,36 @@
       </div>
     </section>
 
+    <!-- Memories -->
+    <section class="section" id="memories">
+      <div class="wrap">
+        <div class="sec-head wide">
+          <p class="sec-no" aria-hidden="true"></p>
+          <h2>Memories</h2>
+          <p class="sec-sub">Moments and milestones from my academic journey. Select a picture to view it larger.</p>
+        </div>
+        <ul class="gallery" id="gallery"></ul>
+      </div>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+      <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.500 5-7 7 7 7"/></svg>
+      </button>
+      <figure>
+        <img id="lbImg" src="" alt="">
+        <figcaption id="lbCap"></figcaption>
+      </figure>
+      <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.500 5 7 7-7 7"/></svg>
+      </button>
+    </dialog>
+
     <!-- References -->
-    <section class="section" id="references">
+    <section class="section alt" id="references">
       <div class="wrap two-col">
         <div class="sec-head">
           <p class="sec-no" aria-hidden="true"></p>

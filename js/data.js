@@ -118,6 +118,13 @@ window.CV = {
     { by: "Udemy", list: ["Fundamentals of Cloud Computing"] }
   ],
 
+  /* Gallery. To add a photo: put the file in img/memories/ and add a line here.
+     src = file name, t = short title, d = one-line description */
+  memories: [
+    { src: "journal-fog-computing-survey.jpg", t: "Journal paper published", d: "A Comprehensive Survey on Fog Computing: Architectures, Techniques, Challenges, and Future Directions. Archives of Computational Methods in Engineering, Springer. With Dr. Arvind Mewada." },
+    { src: "journal-parkinsons-mri.jpg", t: "Journal paper published", d: "Gradient-free concatenated fusion neural network for early diagnosis of Parkinson's disease using MRI data. Telecommunication Systems, Springer. With Dr. Shaharyar Alam Ansari." }
+  ],
+
   reviewer: [
     ["The Journal of Supercomputing", "Springer"],
     ["Scientific Reports", "Springer Nature"],
