@@ -492,3 +492,25 @@ a.contact-item:hover { border-color: #9cc0ff; background: rgba(156, 192, 255, .0
   .teach td:first-child { padding-top: 14px; border-top: 1px solid var(--line); width: auto; }
   .teach td:last-child { padding-bottom: 14px; }
 }
+
+/* ---------- Headline honour ---------- */
+.honour {
+  display: inline-flex; align-items: center; gap: 14px; max-width: 100%;
+  margin-bottom: 26px; padding: 12px 20px 12px 14px;
+  border: 1.5px solid var(--gold); border-radius: 14px;
+  background: linear-gradient(120deg, var(--gold-soft), var(--surface) 75%);
+  box-shadow: var(--shadow); color: var(--ink); text-decoration: none;
+  transition: transform .15s;
+}
+.honour:hover { transform: translateY(-1px); }
+.honour svg { width: 34px; height: 34px; padding: 6px; border-radius: 50%; background: var(--gold); color: var(--surface); stroke-width: 1.7; }
+.honour-text { display: flex; flex-direction: column; line-height: 1.25; }
+.honour-text strong { font-family: var(--serif); font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; letter-spacing: -.01em; }
+.honour-text span { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.honour-src { margin-left: 8px; padding-left: 16px; border-left: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: var(--gold); white-space: nowrap; }
+.card.award.top { grid-column: 1 / -1; background: linear-gradient(120deg, var(--gold-soft), var(--surface) 70%); border-color: var(--gold); }
+.card.award.top h4 { font-family: var(--serif); font-size: 1.4rem; }
+@media (max-width: 520px) {
+  .honour { flex-wrap: wrap; gap: 10px 14px; }
+  .honour-src { margin-left: 48px; padding-left: 0; border-left: 0; }
+}
