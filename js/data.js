@@ -96,7 +96,6 @@ window.CV = {
     { a: "Shakeel, I., Mehfuz, S., & Ahmad, S.", y: 2022, t: "Securing data in cloud: Major threats and recent strategies", v: "2022 11th International Conference on System Modeling & Advancement in Research Trends (SMART)", d: "pp. 1602–1607. IEEE" },
     { a: "Ahmad, S., Mehfuz, S., & Beg, J.", y: 2021, t: "Fuzzy cloud access security broker for requirements negotiation and prioritization", v: "International Conference on Power Electronics, Control and Automation (ICPECA)", d: "pp. 1–6" },
     { a: "Ahmad, S., Mehfuz, S., & Beg, J.", y: 2021, t: "Fuzzy TOPSIS-based cloud model to evaluate cloud computing services", v: "Advances in Mechanical Engineering (G. Manik, S. Kalia, S. K. Sahoo, T. K. Sharma, & O. P. Verma, Eds.)", d: "pp. 37–52. Singapore: Springer Singapore" },
-    { a: "Ahmad, S., Mehfuz, S., & Beg, J.", y: 2021, t: "Enhancing Security of Cloud Platform with Cloud Access Security Broker", v: "Lecture Notes in Networks and Systems", d: "190, 325–335", doi: "10.1007/978-981-16-0882-7_27" },
     { a: "Ahmad, S., Mehfuz, S., & Beg, J.", y: 2020, t: "Securely work from home with CASB policies under COVID-19 pandemic: A short review", v: "2020 9th International Conference System Modeling and Advancement in Research Trends (SMART)", d: "pp. 109–114. IEEE" }
   ],
 
