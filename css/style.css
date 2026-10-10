@@ -632,3 +632,9 @@ a.contact-item:hover { border-color: #b8daf0; background: rgba(184, 218, 240, .0
   .lightbox img { max-height: calc(100vh - 230px); }
   .lightbox figcaption { padding-bottom: 56px; }
 }
+
+/* Gallery filters; photos keep their own shape */
+.g-tabs { margin-bottom: 24px; }
+.gallery { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); align-items: start; }
+.gallery img { aspect-ratio: 1 / 1; object-fit: cover; object-position: top; }
+.g-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }

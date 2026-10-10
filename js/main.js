@@ -268,45 +268,66 @@
 
   /* ---------- Memories gallery ---------- */
   (function () {
-    var list = CV.memories || [], grid = $("gallery"), box = $("lightbox");
-    var img = $("lbImg"), cap = $("lbCap"), at = 0;
+    var all = CV.memories || [], grid = $("gallery"), box = $("lightbox"), tabsEl = $("gTabs");
+    var img = $("lbImg"), cap = $("lbCap"), list = all, at = 0;
+    var CATS = [["", "All"], ["award", "Awards and talks"], ["journal", "Journal papers"], ["conference", "Conference papers"], ["book", "Books"]];
+
     function show(i) {
       at = (i + list.length) % list.length;
       var m = list[at];
-      img.src = "img/memories/" + m.src;
+      img.src = "img/" + m.src;
       img.alt = m.t + ". " + m.d;
       cap.textContent = "";
       cap.appendChild(el("strong", null, m.t));
       cap.appendChild(document.createTextNode(" " + m.d));
+      $("lbPrev").hidden = $("lbNext").hidden = list.length < 2;
     }
-    list.forEach(function (m, i) {
-      var li = el("li"), b = el("button");
-      b.type = "button";
-      var pic = el("img");
-      pic.src = "img/memories/" + m.src;
-      pic.alt = m.t + ". " + m.d;
-      pic.loading = "lazy";
-      b.appendChild(pic);
-      var c = el("span", "g-cap");
-      c.appendChild(el("strong", null, m.t));
-      c.appendChild(el("span", null, m.d));
-      b.appendChild(c);
-      b.addEventListener("click", function () {
-        show(i);
-        if (box.showModal) box.showModal(); else window.open(pic.src, "_blank");
+
+    function draw(cat) {
+      list = all.filter(function (m) { return !cat || m.c === cat; });
+      grid.textContent = "";
+      list.forEach(function (m, i) {
+        var li = el("li"), b = el("button");
+        b.type = "button";
+        var pic = el("img");
+        pic.src = "img/" + m.src;
+        pic.alt = m.t + ". " + m.d;
+        pic.loading = "lazy";
+        b.appendChild(pic);
+        var c = el("span", "g-cap");
+        c.appendChild(el("strong", null, m.t));
+        c.appendChild(el("span", null, m.d));
+        b.appendChild(c);
+        b.addEventListener("click", function () {
+          show(i);
+          if (box.showModal) box.showModal(); else window.open(pic.src, "_blank");
+        });
+        li.appendChild(b);
+        grid.appendChild(li);
       });
-      li.appendChild(b);
-      grid.appendChild(li);
+    }
+
+    CATS.forEach(function (c, n) {
+      var count = all.filter(function (m) { return !c[0] || m.c === c[0]; }).length;
+      if (!count) return;
+      var b = el("button", null, c[1] + " ");
+      b.type = "button";
+      b.setAttribute("aria-selected", String(n === 0));
+      b.appendChild(el("b", null, count));
+      b.addEventListener("click", function () {
+        Array.prototype.forEach.call(tabsEl.children, function (t) { t.setAttribute("aria-selected", String(t === b)); });
+        draw(c[0]);
+      });
+      tabsEl.appendChild(b);
     });
-    var single = list.length < 2;
-    $("lbPrev").hidden = single;
-    $("lbNext").hidden = single;
+    draw("");
+
     $("lbClose").addEventListener("click", function () { box.close(); });
     $("lbPrev").addEventListener("click", function () { show(at - 1); });
     $("lbNext").addEventListener("click", function () { show(at + 1); });
     box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
     box.addEventListener("keydown", function (e) {
-      if (single) return;
+      if (list.length < 2) return;
       if (e.key === "ArrowLeft") show(at - 1);
       if (e.key === "ArrowRight") show(at + 1);
     });
