@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curriculum Vitae | Dr. Shahnawaz Ahmad</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    /* This page is the source of resume.pdf (see tools/build_cv.py). Publication lists come from js/data.js. */
+    @page { size: A4; margin: 15mm 16mm 16mm; }
+    :root { --green: #5d8a1c; --ink: #111; --mute: #444; }
+    * { box-sizing: border-box; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { margin: 0 auto; max-width: 178mm; padding: 12mm 0; color: var(--ink); font: 10.4pt/1.42 "Source Serif 4", Georgia, "Times New Roman", serif; }
+    @media print { body { padding: 0; max-width: none; } }
+    h1, h2, h3, p, ol, ul, dl, dd { margin: 0; }
+    ol, ul { padding: 0; list-style: none; }
+    a { color: inherit; text-decoration: none; }
+
+    .banner { text-align: center; font: 700 11.5pt Cabin, Arial, sans-serif; color: #21400d; background: #eff7de; border: .8pt solid var(--green); border-radius: 4pt; padding: 4.5pt 8pt; margin-bottom: 10pt; }
+    .head { display: flex; justify-content: space-between; gap: 14pt; align-items: flex-start; }
+    h1 { font: 700 19pt Cabin, Arial, sans-serif; margin-bottom: 2pt; }
+    .head p { line-height: 1.5; }
+    .head .mono { font-family: Consolas, "Courier New", monospace; font-size: 9pt; }
+    .head img { width: 27mm; height: 34mm; object-fit: cover; object-position: top; }
+
+    h2 { font: 700 13.5pt Cabin, Arial, sans-serif; margin: 15pt 0 8pt; padding-bottom: 1.5pt; border-bottom: 2.2pt solid; border-image: linear-gradient(90deg, var(--green), #dfeccb 70%, transparent) 1; break-after: avoid; }
+    h3 { font: 600 11pt Cabin, Arial, sans-serif; margin: 11pt 0 6pt; break-after: avoid; }
+
+    .rows > li { display: grid; grid-template-columns: 32mm 1fr; gap: 4mm; margin-bottom: 6pt; break-inside: avoid; }
+    .rows.narrow > li { grid-template-columns: 16mm 1fr; }
+    .rows .when { text-align: right; color: var(--mute); }
+    .rows ul { margin: 1pt 0 0 12pt; list-style: disc; padding-left: 10pt; }
+    .kv > li { display: grid; grid-template-columns: 42mm 1fr; gap: 4mm; margin-bottom: 2.5pt; }
+    .kv .when { text-align: right; }
+
+    .refs { counter-reset: n; }
+    .refs > li { counter-increment: n; position: relative; padding-left: 9mm; margin-bottom: 5.2pt; break-inside: avoid; }
+    .refs > li::before { content: counter(n); position: absolute; left: 0; top: 1.2pt; min-width: 5.2mm; height: 5.2mm; padding: 0 1mm; border-radius: 3mm; background: #111; color: #fff; font: 700 7.6pt/5.2mm Cabin, Arial, sans-serif; text-align: center; }
+    .cols { columns: 2; column-gap: 8mm; }
+    .cols li { break-inside: avoid; margin-bottom: 2.5pt; padding-left: 10pt; position: relative; }
+    .cols li::before { content: ""; position: absolute; left: 0; top: 5.2pt; width: 4pt; height: 4pt; background: var(--green); }
+    .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; }
+    .people li { break-inside: avoid; font-size: 9.6pt; }
+    .foot { margin-top: 14pt; color: var(--mute); font-size: 8.6pt; text-align: right; }
+  </style>
+</head>
+<body>
+  <p class="banner">World’s Top 2% Scientist — Stanford University, 2026</p>
+
+  <header class="head">
+    <div>
+      <h1>Dr. Shahnawaz Ahmad</h1>
+      <p>M341-School of Computer Science Engineering and Technology<br>Bennett University (The Times Group), Greater Noida, India - 201310</p>
+      <p class="mono">shahnawaz98976@gmail.com &nbsp;·&nbsp; shahnawaz.ahmad@bennett.edu.in</p>
+      <p class="mono">https://shahnawazmecw.github.io/</p>
+      <p><strong>Scopus ID:</strong> 57216740438 &nbsp;·&nbsp; +91 971 816 8 253</p>
+    </div>
+    <img src="img/profile.jpg" alt="">
+  </header>
+
+  <h2>Employment Details</h2>
+  <ol class="rows">
+    <li><span class="when">Aug, 2023 - Present</span><div><strong>Assistant Professor</strong> in School of Computer Science Engineering and Technology at Bennett University, Greater Noida, India.
+      <ul><li><strong>Subjects:</strong> Machine Learning, Web Technologies, Data Structure, Cloud Computing, Design and Analysis of Algorithms</li><li><strong>Responsibilities:</strong> Faculties SCI (E) Publications Monitor</li><li><strong>Member:</strong> Anti Ragging Cell</li></ul></div></li>
+    <li><span class="when">Sep, 2015 - July, 2023</span><div><strong>Assistant Professor</strong> in the Department of Computer Science and Engineering at Gurugram University, Gurugram, Haryana, India.
+      <ul><li><strong>Subjects:</strong> Software Engineering, Web Technologies, Data Structure, Computer Network, Design and Analysis of Algorithms</li><li><strong>Member:</strong> Examination Cell, Scholarship Cell</li><li><strong>Responsibilities:</strong> Deputy Chair Data Center, Deputy Chair Student Outreach Programme</li></ul></div></li>
+    <li><span class="when">Aug, 2012 - July, 2013</span><div><strong>Lecturer</strong> in the Department of Computer Science and Engineering at Gautam Buddha Technical University, J. P. Nagar, Amroha, India.
+      <ul><li><strong>Subjects:</strong> Cloud Computing, Data Structure, Computer Network</li><li><strong>Responsibilities:</strong> Time Table Coordinator</li></ul></div></li>
+  </ol>
+
+  <h2>Educational Qualifications</h2>
+  <ol class="rows narrow">
+    <li><span class="when">2023</span><div><strong>Ph.D.</strong> from <em>Faculty of Engineering and Technology, Jamia Millia Islamia University</em> (ranked 3rd among Indian universities (NIRF 2023, 2024) and awarded A++ by NAAC-India), New Delhi, India.<br>Percentage: <strong>84.75%</strong><br>Thesis title: <em>Securing Cloud-Based Encryption Key Management Platform</em><br>Supervisor: Prof. Shabana Mehfuz (Professor), JMI</div></li>
+    <li><span class="when">2015</span><div><strong>Master of Technology (M. Tech) in Computer Engineering</strong> from <em>Maharshi Dayanand University</em>, Rohtak, Haryana, India.<br>Division: <strong>First with Honours (79.90%)</strong><br>Dissertation title: <em>Recommender System for Software Requirements Negotiation and Prioritization</em><br>Supervisor: Dr. Mohd Sadiq (Associate Professor), JMI</div></li>
+    <li><span class="when">2012</span><div><strong>Bachelor of Technology (B.Tech) in Computer Science and Engineering</strong> from <em>Gautam Buddha Technical University</em>, Uttar Pradesh, India.<br>Division: <strong>First with Honours (77.54%)</strong></div></li>
+    <li><span class="when">2015</span><div><strong>Certificate Course in Portuguese Language (Part-Time, 2015)</strong> from <em>Jamia Millia Islamia University</em>, New Delhi, India</div></li>
+  </ol>
+
+  <h2>Research Publications</h2>
+  <h3>Journal Articles</h3>
+  <ol class="refs" id="journals"></ol>
+  <h3>Granted/Published Patents</h3>
+  <ol class="refs" id="patents"></ol>
+  <h3>Authored Books</h3>
+  <ol class="refs" id="books"></ol>
+  <h3>Conference Proceedings</h3>
+  <ol class="refs" id="conferences"></ol>
+  <h3>Book Chapters</h3>
+  <ol class="refs" id="chapters"></ol>
+
+  <h2>Awards</h2>
+  <ol class="rows narrow">
+    <li><span class="when">2026</span><div><strong>World’s Top 2% Scientist:</strong> Listed among the world’s top 2% scientists by Stanford University.</div></li>
+    <li><span class="when">2024</span><div><strong>Research Design Innovation Award:</strong> Awarded by Bennett University during the Dean’s Research and Excellence Award Ceremony 2023-2024, held at Bennett University.</div></li>
+    <li><span class="when">2019</span><div><strong>Best Faculty Award:</strong> Awarded by Mewat Engineering College, Nuh, at Capacity Building and Energy Conservation Workshop on Energy Conservation.</div></li>
+  </ol>
+
+  <h2>Professional Experiences</h2>
+  <ol class="rows narrow">
+    <li><span class="when">2025</span><div><strong>Session Chair:</strong> Recent Trends in Renewable Energy and Advancement in Engineering and Technology (RTREAET-2025), Mewat Engineering College (WAQF), Technically Sponsored by Haryana Renewable Energy Development Agency (HAREDA) Section.</div></li>
+    <li><span class="when">2024</span><div><strong>Co-Session Chair:</strong> Global AI Summit 2024, An IEEE Conference Organised by the School of Computer Science Engineering and Technology, Bennett University, Greater Noida, India.</div></li>
+    <li><span class="when">2023</span><div><strong>Track Chair:</strong> Recent Trends in Renewable Energy and Advancement in Engineering and Technology (RTREAET-2023), Mewat Engineering College (WAQF), Technically Sponsored by Haryana Renewable Energy Development Agency (HAREDA) Section.</div></li>
+  </ol>
+
+  <h2>Skills</h2>
+  <ul class="kv">
+    <li><span class="when">Programming</span><span>C · C++ · Python · PHP</span></li>
+    <li><span class="when">Web Development</span><span>HTML · CSS</span></li>
+    <li><span class="when">Server</span><span>Xampp</span></li>
+    <li><span class="when">Cloud Applications</span><span>Amazon AWS EC2</span></li>
+    <li><span class="when">Simulators</span><span>CloudSim</span></li>
+    <li><span class="when">Database</span><span>MySQL · MongoDB</span></li>
+    <li><span class="when">Software Packages</span><span>Matlab · LaTeX</span></li>
+  </ul>
+
+  <h2>Online Courses</h2>
+  <ul class="kv" id="courses"></ul>
+
+  <h2>Summer School/Short-term/Refresher Courses</h2>
+  <ol class="rows narrow">
+    <li><span class="when">8 Weeks</span><div><strong>Summer Faculty Research Fellow Programme</strong> from 16 May 2023 - 14 July 2023, hosted by <em>Indian Institute of Technology (IIT), Delhi</em>.</div></li>
+    <li><span class="when">4 Weeks</span><div><strong>Induction/Orientation Programme</strong> from June 04 - July 01, 2020, organized by the Teaching Learning Centre, Ramanujan College, University of Delhi under the aegis of Ministry of Education, Govt. of India.</div></li>
+    <li><span class="when">2 Weeks</span><div><strong>Refresher Course in Computational and Mathematical Sciences</strong> from October 22nd - November 05th 2021, organized by the UGC-HRDC, Jamia Millia Islamia, New Delhi.</div></li>
+    <li><span class="when">1 Week</span><div><strong>Faculty Development Programme on Data Analytics Using Python</strong> from 3rd June - June 07th 2024, conducted by ICT Academy (Govt. of India) at Bennett University, Greater Noida, India.</div></li>
+    <li><span class="when">1 Week</span><div><strong>Short Term Course on Outcome Based Curriculum</strong> from June 25 - June 29, 2018, conducted by Curriculum Development Centre at NITTTR, Chandigarh.</div></li>
+  </ol>
+
+  <h2>Reviewer</h2>
+  <ul class="cols" id="reviewer"></ul>
+
+  <h2>References</h2>
+  <ul class="people">
+    <li><strong>Professor Shabana Mehfuz</strong><br>Department of Electrical Engineering, Jamia Millia Islamia, New Delhi-110025, India<br>Contact Number: +91 9818413081<br>Email Id: smehfuz@jmi.ac.in</li>
+    <li><strong>Dr. Ehsan Nowroozi (Senior Lecturer)</strong><br>Centre for Sustainable Cyber Security (CS2), SMIEEE, University of Greenwich<br>Contact Number: +447377561737<br>Email Id: E.Nowroozi@greenwich.ac.uk, ehsannowroozi65@gmail.com</li>
+    <li><strong>Dr. Christian Emeka Okafor (Senior Lecturer)</strong><br>Nnamdi Azikiwe University Awka, Nigeria<br>Contact Number: +2348033622498<br>Email Id: ce.okafor@unizik.edu.ng</li>
+  </ul>
+
+  <p class="foot">Publication lists generated from shahnawazmecw.github.io · <span id="stamp"></span></p>
+
+  <script src="js/data.js"></script>
+  <script>
+    (function () {
+      var CV = window.CV;
+      function $(id) { return document.getElementById(id); }
+      function el(tag, text) { var n = document.createElement(tag); if (text != null) n.textContent = text; return n; }
+      function add(li) { for (var i = 1; i < arguments.length; i++) { var a = arguments[i]; li.appendChild(typeof a === "string" ? document.createTextNode(a) : a); } return li; }
+      function dot(s) { return /[.?!]$/.test(s) ? s : s + "."; }
+
+      ["journals", "conferences"].forEach(function (k) {
+        CV[k].forEach(function (p) {
+          $(k).appendChild(add(el("li"), p.a.replace(/\.$/, "") + ". (" + p.y + "). " + dot(p.t) + " ", el("em", p.v), (p.d ? ", " + p.d : "") + "."));
+        });
+      });
+      CV.chapters.forEach(function (p) {
+        $("chapters").appendChild(add(el("li"), p.a.replace(/\.$/, "") + ". (" + p.y + "). ", el("em", dot(p.t)), " " + p.v + (p.d ? ", " + p.d : "") + "."));
+      });
+      CV.books.forEach(function (p) {
+        $("books").appendChild(add(el("li"), p.a + ". (" + p.y + "). ", el("em", dot(p.t)), " " + p.v + ", " + p.d + "."));
+      });
+      CV.patents.forEach(function (p) {
+        $("patents").appendChild(add(el("li"), "Ahmad, S. (" + p.w + "). ", el("em", dot(p.t.charAt(0).toUpperCase() + p.t.slice(1))), " " + p.n + "."));
+      });
+      CV.courses.forEach(function (c) {
+        var li = el("li"), w = el("span", c.by);
+        w.className = "when";
+        add(li, w, el("span", c.list.join(" · ")));
+        $("courses").appendChild(li);
+      });
+      CV.reviewer.forEach(function (r) { $("reviewer").appendChild(el("li", r[0] + (r[1] ? ", " + r[1] : ""))); });
+      $("stamp").textContent = "updated " + new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+    })();
+  </script>
+</body>
+</html>
