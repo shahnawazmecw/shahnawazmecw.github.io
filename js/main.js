@@ -104,6 +104,38 @@
     }
   }
 
+  function linkRow(p) {
+    var l = el("p", "pub-l");
+    if (p.doi) {
+      var d = el("a", null, "DOI");
+      d.href = "https://doi.org/" + p.doi;
+      d.title = p.doi;
+      d.target = "_blank"; d.rel = "noopener";
+      l.appendChild(d);
+    }
+    var s = el("a", null, "Scholar");
+    s.href = "https://scholar.google.com/scholar?q=" + encodeURIComponent(p.t);
+    s.target = "_blank"; s.rel = "noopener";
+    l.appendChild(s);
+    var c = el("button", null, "Copy citation");
+    c.type = "button";
+    c.addEventListener("click", function () { copyCitation(p, c); });
+    l.appendChild(c);
+    return l;
+  }
+
+  CV.journals.forEach(function (p) {
+    if (!p.sel) return;
+    var li = el("li");
+    var v = el("span", "venue", p.v);
+    v.appendChild(el("b", null, p.y));
+    li.appendChild(v);
+    li.appendChild(el("h4", "pub-t", p.t));
+    li.appendChild(authors(p.a));
+    li.appendChild(linkRow(p));
+    $("selected").appendChild(li);
+  });
+
   function fillYears() {
     var years = {};
     CV[state.tab].forEach(function (p) { years[p.y] = true; });
@@ -142,22 +174,7 @@
       v.appendChild(el("i", null, p.v));
       if (p.d) v.appendChild(document.createTextNode(", " + p.d));
       body.appendChild(v);
-      var l = el("p", "pub-l");
-      if (p.doi) {
-        var d = el("a", null, "DOI: " + p.doi);
-        d.href = "https://doi.org/" + p.doi;
-        d.target = "_blank"; d.rel = "noopener";
-        l.appendChild(d);
-      }
-      var c = el("button", null, "Copy citation");
-      c.type = "button";
-      c.addEventListener("click", function () { copyCitation(p, c); });
-      l.appendChild(c);
-      var s = el("a", null, "Find on Google Scholar");
-      s.href = "https://scholar.google.com/scholar?q=" + encodeURIComponent(p.t);
-      s.target = "_blank"; s.rel = "noopener";
-      l.appendChild(s);
-      body.appendChild(l);
+      body.appendChild(linkRow(p));
       li.appendChild(body);
       pubs.appendChild(li);
     });
