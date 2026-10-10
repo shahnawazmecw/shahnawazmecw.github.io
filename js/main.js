@@ -78,6 +78,32 @@
     return p;
   }
 
+  function copyCitation(p, btn) {
+    var text = p.a.replace(/\.$/, "") + ". (" + p.y + "). " + p.t + ". " + p.v + (p.d ? ", " + p.d : "") + "." +
+      (p.doi ? " https://doi.org/" + p.doi : "");
+    function done(ok) {
+      btn.textContent = ok ? "Copied" : "Copy failed";
+      setTimeout(function () { btn.textContent = "Copy citation"; }, 1600);
+    }
+    function fallback() {
+      var ta = el("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done(ok);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+    } else {
+      fallback();
+    }
+  }
+
   function fillYears() {
     var years = {};
     CV[state.tab].forEach(function (p) { years[p.y] = true; });
@@ -123,6 +149,10 @@
         d.target = "_blank"; d.rel = "noopener";
         l.appendChild(d);
       }
+      var c = el("button", null, "Copy citation");
+      c.type = "button";
+      c.addEventListener("click", function () { copyCitation(p, c); });
+      l.appendChild(c);
       var s = el("a", null, "Find on Google Scholar");
       s.href = "https://scholar.google.com/scholar?q=" + encodeURIComponent(p.t);
       s.target = "_blank"; s.rel = "noopener";
