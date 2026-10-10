@@ -557,3 +557,12 @@ a.contact-item:hover { border-color: #b8daf0; background: rgba(184, 218, 240, .0
 @media (max-width: 700px) {
   .selected { grid-template-columns: 1fr; }
 }
+
+/* Phones: honour badge first, then photo; keep the last teaching divider */
+@media (max-width: 700px) {
+  .hero-grid { gap: 0; }
+  .hero-copy { display: contents; }
+  .honour { order: -2; justify-self: start; }
+  .hero-photo { order: -1; grid-row: auto; margin-bottom: 30px; }
+  .teach tr:last-child td:first-child { border-top: 1px solid var(--line); }
+}
