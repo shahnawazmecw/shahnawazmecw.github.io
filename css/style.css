@@ -638,3 +638,8 @@ a.contact-item:hover { border-color: #b8daf0; background: rgba(184, 218, 240, .0
 .gallery { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); align-items: start; }
 .gallery img { aspect-ratio: 1 / 1; object-fit: cover; object-position: top; }
 .g-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Full-text PDF link */
+.pub-l a.pdf { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.pub-l a.pdf::before { content: "\2193\00a0"; }
+.pub-l a.pdf:hover { background: var(--accent); border-color: var(--accent); }

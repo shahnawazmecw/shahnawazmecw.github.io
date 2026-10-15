@@ -106,6 +106,13 @@
 
   function linkRow(p) {
     var l = el("p", "pub-l");
+    if (p.pdf) {
+      var f = el("a", "pdf", "PDF");
+      f.href = p.pdf;
+      f.target = "_blank"; f.rel = "noopener";
+      f.title = "Download the full paper (PDF)";
+      l.appendChild(f);
+    }
     if (p.doi) {
       var d = el("a", null, "DOI");
       d.href = "https://doi.org/" + p.doi;
