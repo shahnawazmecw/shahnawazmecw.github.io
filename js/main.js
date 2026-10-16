@@ -113,7 +113,13 @@
       f.title = "Download the full paper (PDF)";
       l.appendChild(f);
     } else if (p.req) {
-      var r = el("a", "pdf req", "Request PDF");
+      var g = el("a", "pdf req", "Request PDF");
+      g.href = "https://github.com/shahnawazmecw/shahnawazmecw.github.io/issues/new?template=pdf-request.yml" +
+        "&title=" + encodeURIComponent("PDF request: " + p.t) + "&paper=" + encodeURIComponent(p.t);
+      g.target = "_blank"; g.rel = "noopener";
+      g.title = "Request access to the full paper on GitHub (needs a free GitHub account)";
+      l.appendChild(g);
+      var r = el("a", null, "Email");
       r.href = "mailto:shahnawaz.ahmad@bennett.edu.in?subject=" +
         encodeURIComponent("PDF request: " + p.t) + "&body=" +
         encodeURIComponent("Dear Dr. Ahmad,\n\nI would like a copy of your paper \"" + p.t + "\" (" + p.v + ", " + p.y +

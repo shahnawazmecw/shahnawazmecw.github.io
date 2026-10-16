@@ -1,0 +1,40 @@
+name: Request a paper (PDF)
+description: Ask Dr. Shahnawaz Ahmad for a copy of a paper that is not open access.
+title: "PDF request: "
+labels: ["pdf-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest. Once the request is approved you will get a GitHub invitation (by email) to a private repository that holds the PDF. Please accept it within 7 days.
+        This request is public, so do not write your phone number or other private details here.
+  - type: input
+    id: paper
+    attributes:
+      label: Paper title
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: University / organisation
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What will you use it for?
+      placeholder: e.g. literature review for my PhD thesis
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      options:
+        - label: I will use the PDF only for my own research and will not share or re-post it.
+          required: true
