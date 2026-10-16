@@ -112,6 +112,14 @@
       f.target = "_blank"; f.rel = "noopener";
       f.title = "Download the full paper (PDF)";
       l.appendChild(f);
+    } else if (p.req) {
+      var r = el("a", "pdf req", "Request PDF");
+      r.href = "mailto:shahnawaz.ahmad@bennett.edu.in?subject=" +
+        encodeURIComponent("PDF request: " + p.t) + "&body=" +
+        encodeURIComponent("Dear Dr. Ahmad,\n\nI would like a copy of your paper \"" + p.t + "\" (" + p.v + ", " + p.y +
+          ") for my research.\n\nName:\nAffiliation:\n\nThank you.");
+      r.title = "Email the author for a copy of this paper";
+      l.appendChild(r);
     }
     if (p.doi) {
       var d = el("a", null, "DOI");
