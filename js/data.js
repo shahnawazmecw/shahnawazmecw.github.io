@@ -2,6 +2,7 @@
    a = authors, y = year, t = title, v = venue, d = volume / pages / details, doi = optional DOI */
 window.CV = {
   journals: [
+    { a: "Hussain, S., Raza, Z., Ahmad, S., & Kumar, N.", y: 2027, t: "IoHT in Healthcare 4.0: Architectures, AI-driven analytics, and security challenges for technology-driven patient care", v: "Computers and Electrical Engineering", d: "141, 111576", doi: "10.1016/j.compeleceng.2026.111576" },
     { a: "Ahmad, S., Ansari, M., Mewada, A., Ahmed, G. et al.", y: 2026, sel: true, t: "Blockchain-enhanced federated learning for IoT security and privacy using the GSR-C2N model", v: "Scientific Reports", pdf: "papers/blockchain-enhanced-federated-learning-for-iot-security-and-privacy-us.pdf" },
     { a: "Ahmad, S., Ansari, M. A., Mewada, A., Arif, M., & Yadav, A. S.", y: 2026, t: "Engineering interconnected cyber-physical-human systems for IoT applications: A review", v: "International Journal of System Assurance Engineering and Management", d: "1–14", req: true },
     { a: "Ahmad, S., Ansari, M. A., Mewada, A., & Hussain, S.", y: 2026, t: "Biocrypt-DNA: A DNA-inspired biocryptographic framework for secure cloud computing", v: "Life Cycle Reliability and Safety Engineering", d: "1–20", req: true },
